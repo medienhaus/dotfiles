@@ -1,0 +1,25 @@
+# -- dotfiles repository -------------------------------------------------------
+/*
+!/.bash_*
+!/.bashrc
+!/.config/
+!/.gitignore
+!/.gitmodules
+!/.inputrc
+!/.vim*
+
+/.config/*
+!/.config/git/
+
+# -- ignores && includes -------------------------------------------------------
+.*.swp
+.DS_Store
+
+!.gitkeep
+
+/.bash_history
+
+/.viminfo
+/.vim/.netrwbook
+/.vim/.netrwhist
+/.vim/undodir/*

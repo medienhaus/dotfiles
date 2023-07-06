@@ -1,0 +1,42 @@
+# reset color/mode
+nocolor="$(tput sgr0)"
+
+# foreground normal
+black="$(tput sgr0; tput setaf 0)"
+red="$(tput sgr0; tput setaf 1)"
+green="$(tput sgr0; tput setaf 2)"
+yellow="$(tput sgr0; tput setaf 3)"
+blue="$(tput sgr0; tput setaf 4)"
+magenta="$(tput sgr0; tput setaf 5)"
+cyan="$(tput sgr0; tput setaf 6)"
+white="$(tput sgr0; tput setaf 7)"
+
+# foreground bold
+BLACK="$(tput sgr0; tput bold; tput setaf 0)"
+RED="$(tput sgr0; tput bold; tput setaf 1)"
+GREEN="$(tput sgr0; tput bold; tput setaf 2)"
+YELLOW="$(tput sgr0; tput bold; tput setaf 3)"
+BLUE="$(tput sgr0; tput bold; tput setaf 4)"
+MAGENTA="$(tput sgr0; tput bold; tput setaf 5)"
+CYAN="$(tput sgr0; tput bold; tput setaf 6)"
+WHITE="$(tput sgr0; tput bold; tput setaf 7)"
+
+# background normal
+#bg_black="$(tput sgr0; tput setab 0)"
+#bg_red="$(tput sgr0; tput setab 1)"
+#bg_green="$(tput sgr0; tput setab 2)"
+#bg_yellow="$(tput sgr0; tput setab 3)"
+#bg_blue="$(tput sgr0; tput setab 4)"
+#bg_magenta="$(tput sgr0; tput setab 5)"
+#bg_cyan="$(tput sgr0; tput setab 6)"
+#bg_white="$(tput sgr0; tput setab 7)"
+
+# background bold
+#bg_BLACK="$(tput sgr0; tput bold; tput setab 0)"
+#bg_RED="$(tput sgr0; tput bold; tput setab 1)"
+#bg_GREEN="$(tput sgr0; tput bold; tput setab 2)"
+#bg_YELLOW="$(tput sgr0; tput bold; tput setab 3)"
+#bg_BLUE="$(tput sgr0; tput bold; tput setab 4)"
+#bg_MAGENTA="$(tput sgr0; tput bold; tput setab 5)"
+#bg_CYAN="$(tput sgr0; tput bold; tput setab 6)"
+#bg_WHITE="$(tput sgr0; tput bold; tput setab 7)"

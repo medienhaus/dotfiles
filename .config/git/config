@@ -1,0 +1,29 @@
+[core]
+  #editor = vim
+  excludesfile = ~/.config/git/gitignore
+
+[init]
+  defaultBranch = main
+
+[diff]
+  tool = vimdiff
+[difftool]
+  prompt = false
+[difftool "vimdiff"]
+  cmd = vim -d \"$LOCAL\" \"$REMOTE\"
+
+[merge]
+  tool = fugitive
+[mergetool]
+  keepBackup = false
+  keepTemporaries = false
+  prompt = false
+[mergetool "fugitive"]
+  cmd = vim -c \"Gvdiffsplit!\" \"$MERGED\"
+  #cmd = vim -d \"$LOCAL\" \"$MERGED\" \"$BASE\" -c \"wincmd w\"
+
+#[pull]
+#  rebase = false
+
+[user]
+  useConfigOnly = true
