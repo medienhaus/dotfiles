@@ -35,19 +35,21 @@ shopt -s no_empty_cmd_completion
 #if [[ -r "/etc/debian_version" ]]; then
 #  ...
 #fi
+#
+#PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 
-# set color prompt according to linux/macos, local/remote and root/user
+# set color prompt according to local/remote and root/user
 if [[ -z "$SSH_CLIENT" ]] && [[ -z "$SSH_CONNECTION" ]] && [[ -z "$SSH_TTY" ]]; then
   if [[ "$(whoami)" = "root" ]]; then
-    PS1='\[$RED\]\u\[$BLACK\]|\[$BLACK\]\h\[$nocolor\] \[$YELLOW\]\w\[$WHITE\] >> \[$nocolor\]'
+    PS1='\[$RED\]\u\[$BLACK\]@\[$BLACK\]\h\[$nocolor\] \[$white\]\w\[$nocolor\] \[$BLACK\]>>\[$nocolor\] '
   else
-    PS1='\[$BLACK\]\u\[$BLACK\]|\[$BLACK\]\h\[$nocolor\] \[$white\]\w\[$BLACK\] >> \[$nocolor\]'
+    PS1='\[$BLACK\]\u\[$BLACK\]@\[$BLACK\]\h\[$nocolor\] \[$white\]\w\[$nocolor\] \[$BLACK\]>>\[$nocolor\] '
   fi
 else
   if [[ "$(whoami)" = "root" ]]; then
-    PS1='\[$RED\]\u\[$BLACK\]|\[$BLACK\]\h\[$nocolor\] \[$YELLOW\]\w\[$WHITE\] >> \[$nocolor\]'
+    PS1='\[$RED\]\u\[$BLACK\]@\[$BLACK\]\h\[$nocolor\] \[$white\]\w\[$nocolor\] \[$BLACK\]\$\[$nocolor\] '
   else
-    PS1='\[$BLACK\]\u\[$BLACK\]|\[$BLACK\]\h\[$nocolor\] \[$white\]\w\[$BLUE\] >> \[$nocolor\]'
+    PS1='\[$BLACK\]\u\[$BLACK\]@\[$BLACK\]\h\[$nocolor\] \[$white\]\w\[$nocolor\] \[$BLACK\]\$\[$nocolor\] '
   fi
 fi
 
