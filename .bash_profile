@@ -88,6 +88,13 @@ elif command -v vim >/dev/null; then
   export VISUAL="$(command -v vim)"
 fi
 
+# source `fzf` completion and key-bindings
+if command -v fzf >/dev/null; then
+  FZF_CTRL_T_COMMAND="" \
+  FZF_ALT_C_COMMAND="" \
+  eval "$(fzf --bash)"
+fi
+
 # source $HOME/.bashrc
 if [[ "$BASH" ]] && [[ "$BASH" != "/bin/sh" ]]; then
   if [[ -r "$HOME/.bashrc" ]]; then
