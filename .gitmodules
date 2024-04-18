@@ -1,6 +1,9 @@
 [submodule ".vim/pack/plugins/start/ale"]
   path = .vim/pack/plugins/start/ale
   url = https://github.com/dense-analysis/ale.git
+[submodule ".vim/pack/plugins/start/fzf"]
+  path = .vim/pack/plugins/start/fzf
+  url = https://github.com/junegunn/fzf.git
 [submodule ".vim/pack/plugins/start/vim-better-whitespace"]
   path = .vim/pack/plugins/start/vim-better-whitespace
   url = https://github.com/ntpeters/vim-better-whitespace.git
