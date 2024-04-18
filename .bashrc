@@ -21,6 +21,12 @@ shopt -s expand_aliases
 # append to the history file, don't overwrite it
 shopt -s histappend
 
+# reload failed history expansion into readline editing buffer
+shopt -s histreedit
+
+# load expanded history substitution into readline editing buffer
+shopt -s histverify
+
 # attempt hostname expansion when @ is at the beginning of a word
 shopt -s hostcomplete
 
