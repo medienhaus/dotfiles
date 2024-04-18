@@ -30,12 +30,11 @@ export LESS_TERMCAP_ue=$'\033[0m'         # end underline
 # set PATH
 if [[ "$(uname -s)" = "Linux" ]]; then
   if [[ "$(id -u)" -eq "0" ]]; then
-    PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+    export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
   else
-    PATH="/usr/local/bin:/usr/bin:/bin"
+    export PATH="/usr/local/bin:/usr/bin:/bin"
   fi
 fi
-export PATH
 
 # source system-wide /etc/bashrc
 if [[ "$PS1" ]]; then
@@ -58,12 +57,11 @@ fi
 # source /etc/profile.d/* scripts
 if [[ "$(uname -s)" = "Linux" ]]; then
   if [[ -d "/etc/profile.d" ]]; then
-    for script in /etc/profile.d/*.sh; do
+    for script in "/etc/profile.d/"*.sh; do
       if [[ -r "$script" ]]; then
         source "$script"
       fi
     done
-    unset scripts
   fi
 fi
 
