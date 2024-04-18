@@ -127,7 +127,7 @@ set winminwidth=5
 
 set nowrap
 
-let mapleader = ","
+let mapleader = " "
 
 let g:netrw_banner = 0
 let g:netrw_bufsettings = "noma nomod nu nowrap ro nobl rnu"
