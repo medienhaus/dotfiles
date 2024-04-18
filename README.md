@@ -8,7 +8,7 @@ git init --separate-git-dir=$HOME/dotfiles && \
 git checkout
 ```
 
-You might want to install [**fzf**](https://github.com/junegunn/fzf/), a general-purpose command-line fuzzy finder, which is conditionally configured for **Bash** to search through history, and **Vim** to open files.
+You might want to install [**fzf**](https://github.com/junegunn/fzf/), a general-purpose command-line fuzzy finder, which is conditionally configured for **Bash** to search through history via `Ctrl-r`, and **Vim** to open files via `Space-ff`.
 
 ```
 apt install fzf
