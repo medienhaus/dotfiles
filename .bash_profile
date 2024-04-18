@@ -65,11 +65,13 @@ if [[ "$(uname -s)" = "Linux" ]]; then
   fi
 fi
 
-# set environment variables
-export HISTCONTROL="ignoreboth"
+# set history environment variables
+export HISTCONTROL="ignoreboth:erasedups"
 export HISTFILESIZE="10000"
 export HISTIGNORE="cd:ls:pwd:reboot:shutdown"
 export HISTSIZE="10000"
+
+# set less environment variables
 export LESSHISTFILE="-"
 
 # add $HOME/bin to PATH
