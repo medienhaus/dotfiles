@@ -1,16 +1,25 @@
 # /etc/inputrc - global inputrc for libreadline
 # See readline(3readline) and 'info rluserman' for more information.
 
+# https://www.gnu.org/software/bash/manual/html_node/Readline-Init-File-Syntax.html
 set bell-style none
+set blink-matching-paren on
+set colored-completion-prefix on
+#set completion-display-width 1
 set completion-ignore-case off
+set colored-stats on
 set convert-meta off
 #set editing-mode vi
 set input-meta on
 set mark-directories on
 set mark-symlinked-directories on
 set match-hidden-files off
+#set menu-complete-display-prefix on
 set output-meta on
+set page-completions on
+#set show-all-if-ambiguous on
 set show-all-if-unmodified on
+set skip-completed-text on
 set visible-stats on
 
 # ctrl-up-arrow and ctrl-down-arrow for beginning/end of line
@@ -27,5 +36,17 @@ set visible-stats on
 #"\e[1;6C": forward-word
 #"\e[1;6D": backward-word
 
-# shift-tab to cycle through the completion list
+# tab to cycle through the completion list forward (default)
+#TAB: menu-complete
+
+# shift-tab to cycle through the completion list backward
+#"\e[Z": menu-complete-backward
+
+# shift-tab to cycle through the completion list forward
 "\e[Z": menu-complete
+
+# ctrl-n to cycle through the completion list forward
+"\C-n": menu-complete
+
+# ctrl-p to cycle through the completion list backward
+"\C-p": menu-complete-backward
