@@ -80,7 +80,10 @@ if [[ -d "$HOME/bin" ]]; then
 fi
 
 # set EDITOR and VISUAL
-if command -v vim >/dev/null; then
+if command -v nvim >/dev/null; then
+  export EDITOR="$(command -v nvim)"
+  export VISUAL="$(command -v nvim)"
+elif command -v vim >/dev/null; then
   export EDITOR="$(command -v vim)"
   export VISUAL="$(command -v vim)"
 fi
