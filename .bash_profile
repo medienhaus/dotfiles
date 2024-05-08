@@ -97,14 +97,18 @@ if command -v fzf >/dev/null; then
 
   # fallback for `fzf` versions *without* shell integration script parameters;
   # shell integration script parameters were embedded in `fzf` version 0.48.0
-  elif command -v brew >/dev/null; then
-    if [[ -d "/usr/share/fzf" ]]; then
-      for script in "/usr/share/fzf/"*.bash; do
-        if [[ -r "$script" ]]; then
-          source "$script"
-        fi
-      done
-    fi
+  elif [[ -d "/usr/share/fzf" ]]; then
+    for script in "/usr/share/fzf/"*.bash; do
+      if [[ -r "$script" ]]; then
+        source "$script"
+      fi
+    done
+  elif [[ -d "/usr/share/doc/fzf/examples/" ]]; then
+    for script in "/usr/share/doc/fzf/examples/"*.bash; do
+      if [[ -r "$script" ]]; then
+        source "$script"
+      fi
+    done
   fi
 fi
 
