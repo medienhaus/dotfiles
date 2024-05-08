@@ -90,9 +90,22 @@ fi
 
 # source `fzf` completion and key-bindings
 if command -v fzf >/dev/null; then
-  FZF_CTRL_T_COMMAND="" \
-  FZF_ALT_C_COMMAND="" \
-  eval "$(fzf --bash)"
+  if [[ "$(fzf --bash)" ]] &>/dev/null; then
+    FZF_CTRL_T_COMMAND="" \
+    FZF_ALT_C_COMMAND="" \
+    eval "$(fzf --bash)"
+
+  # fallback for `fzf` versions *without* shell integration script parameters;
+  # shell integration script parameters were embedded in `fzf` version 0.48.0
+  elif command -v brew >/dev/null; then
+    if [[ -d "/usr/share/fzf" ]]; then
+      for script in "/usr/share/fzf/"*.bash; do
+        if [[ -r "$script" ]]; then
+          source "$script"
+        fi
+      done
+    fi
+  fi
 fi
 
 # source $HOME/.bashrc
