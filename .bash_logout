@@ -4,5 +4,7 @@
 if [[ "$SHLVL" = "1" ]]; then
   if command -v clear_console >/dev/null; then
     clear_console -q
+  else
+    clear && reset
   fi
 fi
